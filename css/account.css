@@ -1,0 +1,117 @@
+#accountSwitcher {
+    background-image: url('../Images/3.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.frame {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.switch {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    width: 200%;
+    height: 100%;
+    transform: translateX(0);
+    transition: .5s;
+}
+.switch.signup {
+    transform: translateX(-50%);
+}
+.sign {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+.sign .backCont {
+    display: flex;
+    padding: 0 30px;
+}
+.sign .backCont a, .sign .backCont a svg{
+    width: 32px;
+    height: 32px;
+}
+.sign form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    flex-grow: 1;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.sign form .emailCont, .sign form .passCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+.sign form .optionalCont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.sign form .optionalCont div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.sign form .optionalCont input[type="checkbox"]{
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background-clip: content-box;
+    border: solid 1px var(--white);
+    box-sizing: border-box;
+    padding: 5px;
+    cursor: pointer;
+}
+.sign form .optionalCont input[type="checkbox"]:checked{
+    background-color: var(--white);
+}
+.formFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 30px;
+}
+
+.errorDisplayer {
+    color: red;
+}
+.successDisplayer {
+    color: green;
+}
+
+@media screen and (max-width: 864px) {
+    .sign .backCont {
+        display: none;
+    }
+    .sign {
+        width: 50%;
+    }
+    .switch.signup {
+        transform: translateX(-50%);
+    }
+    .sign form {
+        align-items: center;
+    }
+    .sign form div {
+        width: 90%;
+    }
+    .formFooter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Information</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/navbar style.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/accountInfo.css">
+    <script src="../Javascript/navbar.js" defer></script>
+    <script src="../Javascript/loading.js" defer></script>
+</head>
+<body>
+    <!-- navigator -->
+    <nav>
+        <a href="../index.html" class="logo">
+            <img src="../Logo/Full White Logo.png" alt="The Logo">
+        </a>
+        <ul>
+            <li class="burger"><a href="../index.html">Home</a></li>
+            <li class="burger"><a href="pages/account.html">Account</a></li>
+        </ul>
+        <span class="navLeftIcons">
+            <a href="account.html" class="icon account">
+                <svg id="account_circle-24px_1_" data-name="account_circle-24px (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path id="Path_29" data-name="Path 29" d="M0,0H24V24H0Z" fill="none"/>
+                    <path id="Path_30" data-name="Path 30" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,3A3,3,0,1,1,9,8,3,3,0,0,1,12,5Zm0,14.2a7.2,7.2,0,0,1-6-3.22c.03-1.99,4-3.08,6-3.08s5.97,1.09,6,3.08A7.2,7.2,0,0,1,12,19.2Z" fill="currentColor"/>
+                </svg>
+            </a>
+        </span>
+        <a href="" class="icon menu">
+            <svg id="menu-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_41" data-name="Path 41" d="M0,0H24V24H0Z" fill="none"/>
+                <path id="Path_42" data-name="Path 42" d="M4,18H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2Zm0-5H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2ZM3,7A1,1,0,0,0,4,8H20a1,1,0,0,0,0-2H4A1,1,0,0,0,3,7Z" fill="currentColor"/>
+            </svg>
+            <svg id="close-24px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path id="Path_39" data-name="Path 39" d="M0,0H24V24H0Z" fill="none"/>
+                <path id="Path_40" data-name="Path 40" d="M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89A1,1,0,0,0,7.11,18.3L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12,18.3,7.11A1,1,0,0,0,18.3,5.71Z" fill="#000"/>
+            </svg>
+        </a>
+    </nav>
+    <!-- end of navigator -->
+    <section id="accountDetails" class="container sections">
+        <h1 class="sHeader">Account Information</h1>
+        <div class="accountInfo">
+            <h2 class="sContent">Profile</h2>
+            <div class="accountRow">
+                <div class="username">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" autocomplete="off">
+                </div>
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" autocomplete="off">
+                </div>
+            </div>
+            <div class="accountRow">
+                <div class="firstName">
+                    <label for="firstName">First name</label>
+                    <input type="text" name="firstName" id="firstName" autocomplete="off">
+                </div>
+                <div class="lastName">
+                    <label for="lastName">Last name</label>
+                    <input type="text" name="lastName" id="lastName" autocomplete="off">
+                </div>
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" autocomplete="off">
+            </div>
+            <button id="profilUpdate" class="pBtn">update</button>
+        </div>
+        <div class="paymentInfo">
+            <h2 class="sContent">Payment</h2>
+            <div class="paymentRow">
+                <div class="expiryDate">
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="text" name="expiryDate" id="expiryDate" autocomplete="off" disabled>
+                </div>
+                <div class="startPaymentDate">
+                    <label for="startPaymentDate">Start payment date</label>
+                    <input type="text" name="startPaymentDate" id="startPaymentDate" autocomplete="off" disabled>
+                </div>
+            </div>
+            <div class="planType">
+                <label for="planType">Plan type</label>
+                <input type="text" name="planType" id="planType" autocomplete="off" disabled>
+            </div>
+        </div>
+    </section>
+    <script>
+        const username = document.querySelector('#username');
+        const password = document.querySelector('#password');
+        const firstName = document.querySelector('#firstName');
+        const lastName = document.querySelector('#lastName');
+        const email = document.querySelector('#email');
+        const expiryDate = document.querySelector('#expiryDate');
+        const startPaymentDate = document.querySelector('#startPaymentDate');
+        const planType = document.querySelector('#planType');
+        const profilUpdate = document.querySelector('#profilUpdate');
+
+        async function profileUpdate() {
+            const updatedData = {
+                username: username.value,
+                password: password.value,
+                first_name: firstName.value,
+                last_name: lastName.value,
+                email: email.value
+            }
+
+            await fetch('https://securitycubes.com/api/user/', {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: 'Token ' + localStorage.getItem('token')
+                },
+                body: JSON.stringify(updatedData)
+            })
+            .then(res => {
+                if(res.status !== 200) return console.log('An Error Occurred');
+                location.reload()
+            })
+        }
+
+        profilUpdate.addEventListener('click', e => {
+            e.preventDefault()
+            profileUpdate()
+            userData()
+        })
+
+        async function userData() {
+            if(localStorage.getItem('token') === null) return;
+
+            await fetch('https://securitycubes.com/api/user/', { method: 'GET',
+            headers: {
+                Authorization: 'Token ' + localStorage.getItem('token')
+            }
+            }).then(res => {
+                if(res.status !== 200) return console.log('you\'re not logged in');
+                res.json().then(json => {
+                    username.value = json.username;
+                    password.value = json.password;
+                    firstName.value = json.first_name;
+                    lastName.value = json.last_name;
+                    email.value = json.email;
+                    expiryDate.value = json.ExpiredPaidDate;
+                    startPaymentDate.value = json.StartPaidDate;
+                    planType.value = json.planType;
+                    removeLoader();
+                });
+            })
+        }
+        userData();
+    </script>
+</body>
+</html>

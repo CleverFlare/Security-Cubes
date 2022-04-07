@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Cubes</title>
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/navbar style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="Javascript/navbar.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWKWk7u-fhpEWxhz0nGVdbSebu7XyXwBIfk7xe2XtPuY4jIhm12EQjYT6A8EWI9dQIrsIxam0OHasfrH"></script>
+</head>
+<body>
+    <!-- navigator -->
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="Logo/Full White Logo.png" alt="The Logo">
+        </a>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#CTF">CTF Online</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li class="burger"><a href="pages/account.html">Account</a></li>
+        </ul>
+        <span class="navLeftIcons">
+            <!-- <a class="icon logout">
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98.25 95.95">
+                    <path d="M68.83,44.34v1.33q0,11.94,0,23.88c0,3.79-1.89,5.7-5.66,5.7q-9.48,0-18.95,0H42.64c0,0.54-.07,1-0.07,1.46,0,5.4-.1,10.8,0,16.2,0.07,2.79-2.19,3.67-4.21,2.6C26.74,89.36,15,83.37,3.29,77.34A6.39,6.39,0,0,1,0,73.58V3.74C1.1,1,3.17,0,6.11,0c19,0.07,38.07,0,57.1,0,3,0,4.67,1.16,5.4,3.6A3.48,3.48,0,0,1,68.8,4.7c0,5.51,0,11,0,16.66H59.23V20.08c0-2.52,0-5,0-7.56,0-2-.86-2.85-2.87-2.86-5.07,0-10.15,0-15.23,0H19.3c0,0.08-.07.16-0.1,0.25,0.91,0.49,1.8,1,2.72,1.47q8.85,4.53,17.71,9a5.4,5.4,0,0,1,3,5.27q0,19.08,0,38.15v1.73c0.54,0,.93.06,1.32,0.06q6.06,0,12.11,0c2.26,0,3.13-.87,3.14-3.11V44.34h9.6Z" fill="currentColor"/>
+                    <path d="M96.61,36.17Q89.05,43.84,81.4,51.43c-2.68,2.64-6.19,2.35-8-.54a5.13,5.13,0,0,1,1-6.26c1.94-2,3.9-3.88,5.85-5.82,0.24-.25.47-0.51,0.91-1H72.34q-9,0-18,0a4.78,4.78,0,0,1-4.83-3.07,5.24,5.24,0,0,1,5.15-7.45H80.89L81,27c-1.59-1.54-3.19-3.07-4.75-4.64a23.4,23.4,0,0,1-2.73-3,4.72,4.72,0,0,1,7-6.17c2.75,2.55,5.37,5.24,8,7.89s5.32,5.29,7.94,8C98.78,31.31,98.81,33.94,96.61,36.17Z"
+                    fill="currentColor"/>
+                </svg>
+            </a> -->
+            <a href="pages/account.html" class="icon account">
+                <svg id="account_circle-24px_1_" data-name="account_circle-24px (1)" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path id="Path_29" data-name="Path 29" d="M0,0H24V24H0Z" fill="none"/>
+                    <path id="Path_30" data-name="Path 30" d="M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,3A3,3,0,1,1,9,8,3,3,0,0,1,12,5Zm0,14.2a7.2,7.2,0,0,1-6-3.22c.03-1.99,4-3.08,6-3.08s5.97,1.09,6,3.08A7.2,7.2,0,0,1,12,19.2Z" fill="currentColor"/>
+                </svg>
+            </a>
+        </span>
+        <a href="" class="icon menu">
+            <svg id="menu-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path id="Path_41" data-name="Path 41" d="M0,0H24V24H0Z" fill="none"/>
+                <path id="Path_42" data-name="Path 42" d="M4,18H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2Zm0-5H20a1,1,0,0,0,0-2H4a1,1,0,0,0,0,2ZM3,7A1,1,0,0,0,4,8H20a1,1,0,0,0,0-2H4A1,1,0,0,0,3,7Z" fill="currentColor"/>
+            </svg>
+            <svg id="close-24px" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
+                <path id="Path_39" data-name="Path 39" d="M0,0H24V24H0Z" fill="none"/>
+                <path id="Path_40" data-name="Path 40" d="M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89A1,1,0,0,0,7.11,18.3L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12,18.3,7.11A1,1,0,0,0,18.3,5.71Z" fill="#000"/>
+            </svg>
+        </a>
+    </nav>
+    <!-- end of navigator -->
+
+    <!-- the follow us element as well as the social media icons -->
+    <aside>
+        <p>Follow us</p>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g id="Group_11" data-name="Group 11" transform="translate(-3125 759)">
+                    <path id="Icon_awesome-facebook" data-name="Icon awesome-facebook" d="M20.1,10.333a9.771,9.771,0,1,0-11.3,9.652V13.158H6.324V10.333H8.806V8.18a3.447,3.447,0,0,1,3.69-3.8,15.037,15.037,0,0,1,2.187.191v2.4H13.452A1.412,1.412,0,0,0,11.86,8.5v1.834h2.71l-.433,2.824H11.86v6.828A9.774,9.774,0,0,0,20.1,10.333Z" transform="translate(3126.771 -757.219)" fill="#f9f9f9"/>
+                    <g id="Group_10" data-name="Group 10" transform="translate(25 25)">
+                        <g id="cancel-24px" transform="translate(3100 -784)">
+                            <path id="Path_37" data-name="Path 37" d="M0,0H24V24H0Z" fill="none" opacity="0.87"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>            
+        </a>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <g id="Group_9" data-name="Group 9" transform="translate(-3100 784)">
+                    <path id="Icon_ionic-logo-twitter" data-name="Icon ionic-logo-twitter" d="M19.413,6.236a7.466,7.466,0,0,1-2.121.584,3.706,3.706,0,0,0,1.625-2.045,7.338,7.338,0,0,1-2.346.9A3.692,3.692,0,0,0,10.183,8.2a3.615,3.615,0,0,0,.1.843A10.466,10.466,0,0,1,2.664,5.175a3.7,3.7,0,0,0,1.148,4.936,3.607,3.607,0,0,1-1.678-.462V9.7A3.7,3.7,0,0,0,5.1,13.319a3.717,3.717,0,0,1-.973.13,3.484,3.484,0,0,1-.694-.069,3.7,3.7,0,0,0,3.452,2.567A7.4,7.4,0,0,1,2.294,17.53a7.486,7.486,0,0,1-.881-.053,10.322,10.322,0,0,0,5.653,1.671A10.445,10.445,0,0,0,17.582,8.627c0-.16,0-.32-.011-.477A7.518,7.518,0,0,0,19.413,6.236Z" transform="translate(3101.587 -783.5)" fill="currentColor"/>
+                    <g id="cancel-24px" transform="translate(3100 -784)">
+                        <path id="Path_37" data-name="Path 37" d="M0,0H24V24H0Z" fill="none" opacity="0.87"/>
+                    </g>
+                </g>
+            </svg>
+        </a>
+    </aside>
+    <!-- end of aside -->
+
+    <!-- banner -->
+    <header id="home" class="container sections">
+        <p class="cp" style="text-transform: uppercase;">cyber security made fun!</p>
+        <h1 class="pHeader">Compete in an MMORPG game with other hackers.</h1>
+     
+        <a href="pages/go.html" class="pBtn">Hacker portal</a>
+    </header>
+    <!-- end of banner -->
+
+    <!-- about us -->
+    <section id="about" class="container sections">
+        <div>
+            <h1 class="sHeader">About</h1>
+            <p class="labels">Here you can compete with other hacker in online MMORPG game , you can access it though our hacker portal</p3>
+        </div>
+        
+        <div>
+            <h1 class="sHeader">Mission</h1>
+            <p class="labels">we are improveing the education the world needs , by creating an 
+                engaging education experirnce than we do from the calssrom , based on interactive learning</p>
+        </div>
+        <div>
+            <h1 class="sHeader">Vision</h1>
+            <p class="labels">Be number 1 providing interactive learning , and Cyber security consultancy</p>
+        </div>
+    </section>
+    <!-- end of about us -->
+
+    <!-- CTF -->
+    <section id="CTF" class="container sections">
+        <p class="cp" style="text-transform: uppercase;">CTF ONLINE GYM</p>
+        <h1 class="pHeader">Compete With other players and capture the flags.</h1>
+        <p class="sContent">participants must reverse engineer, break,hack, decrypt, and think creatively and  critically to solve the challenges and capture the flags.</p>
+        <a href="pages/paths.html" class="pBtn">Compete Now</a>
+    </section>
+    <!-- end of CTF -->
+
+    <!-- Contact us -->
+    <section id="contact" class="container sections">
+        <h1 class="sHeader">Contact us</h1>
+        <p class="sContent">Get in touch with us today!</p>
+        <form>
+            <div class="user">
+                <div>
+                    <label for="username">Name</label>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+            </div>
+            <div>
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            </div>
+            <input type="submit" class="pBtn" value="Send">
+        </form>
+    </section>
+    <!-- end of Contact us -->
+
+    <!-- Pricing -->
+    <section id="pricing" class="container sections">
+        <h1 class="sHeader">Pricing</h1>
+        <p class="sContent">Here you can compete with other hacker in online MMORPG game , you can access it though our hacker portal</p>
+        <div class="priceList">
+            <div class="priceItem">
+                <p class="cp">Plan 1</p>
+                <div>
+                    <h1 class="pHeader">$10</h1>
+                    <p>Per month</p>
+                </div>
+                <hr>
+                <ul>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                </ul>
+                <div class="priceItemButtons">
+                    <button class="sBtnW">Join now</button>
+                </div>
+            </div>
+            <div class="priceItem">
+                <p class="cp">Plan 2</p>
+                <div>
+                    <h1 class="pHeader">$50</h1>
+                    <p>Per month</p>
+                </div>
+                <hr>
+                <ul>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                </ul>
+                <div class="priceItemButtons">
+                    <button class="sBtnW">Join now</button>
+                </div>
+            </div>
+            <div class="priceItem">
+                <p class="cp">Plan 3</p>
+                <div>
+                    <h1 class="pHeader">$60</h1>
+                    <p>Per month</p>
+                </div>
+                <hr>
+                <ul>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                    <li class="cp">Feature</li>
+                </ul>
+                <div class="priceItemButtons">
+                    <button class="sBtnW">Join now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of Pricing -->
+
+    <!-- Blog -->
+    <section id="blog" class="container sections">
+        <h1 class="pHeader">Blog</h1>
+        <p class="sContent">Find a new source of knowledge for yourself!</p>
+        <button class="pBtnDis">Coming soon</button>
+    </section>
+    <!-- end of Blog -->
+
+    <script>
+        localStorage.setItem('destination', 'accountInfo.html')
+        const priceList = document.querySelector('.priceList');
+        const contactUsUsername = document.querySelector('#contact form #username');
+        const contactUsEmail = document.querySelector('#contact form #email');
+        const contactUsMessage = document.querySelector('#contact form #message');
+        const contactUsSubmit = document.querySelector('#contact form input[type="submit"]')
+
+        async function sendContactMessage() {
+            const data = {
+                email: contactUsEmail.value,
+                FullName: contactUsUsername.value,
+                message: contactUsMessage.value
+            }
+            await fetch('https://securitycubes.com/api/plans/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            }).then(res => {
+                res.json().then(json => {
+                    console.log(json);
+                })
+            })
+        }
+
+        contactUsSubmit.addEventListener('click', e => {
+            e.preventDefault();
+            if(contactUsUsername.value !== '' && contactUsEmail.value !== '' && contactUsMessage.value !== '') {
+                sendContactMessage();
+            }
+        })
+
+        async function sendContactUs() {
+            try{
+                await fetch('https://securitycubes.com/api/plans/', {
+                    headers: { Authorization: "Token " + localStorage.getItem('token') }
+                }).then(res => {
+                    while(priceList.firstChild) priceList.removeChild(priceList.firstChild);
+                    res.json().then(json => {
+                        let userInfo = json;
+                        for(const plan of json.plans) {
+                            const planItem = document.createElement('div');
+                            planItem.classList.add('priceItem');
+                            planItem.setAttribute('data-ID', plan.id);
+                            planItem.setAttribute('data-paid', plan.paid)
+
+                            const planName = document.createElement('p');
+                            planName.classList.add('cp');
+                            planName.textContent = plan.Description;
+                            planItem.appendChild(planName);
+
+                            const planHead = document.createElement('div');
+                            planItem.appendChild(planHead);
+
+                            const planPrice = document.createElement('h1')
+                            planPrice.classList.add('pHeader');
+                            planPrice.textContent = '$' + plan.Pricing;
+                            planHead.appendChild(planPrice);
+
+                            const durationBetweenPayments = document.createElement('p')
+                            durationBetweenPayments.textContent = 'Per month';
+                            planHead.appendChild(durationBetweenPayments);
+
+                            const hr = document.createElement('hr');
+                            planItem.appendChild(hr);
+
+                            const ul = document.createElement('ul');
+                            planItem.appendChild(ul);
+
+                            const feature = document.createElement('li');
+                            feature.classList.add('cp');
+
+                            for(const feature of plan.Features) {
+                                const featureItem = document.createElement('li');
+                                featureItem.classList.add('cp');
+                                featureItem.textContent = feature;
+                                ul.appendChild(featureItem);
+                            }
+
+                            const buttonGroup = document.createElement('div');
+                            buttonGroup.classList.add('priceItemButtons');
+                            planItem.appendChild(buttonGroup);
+
+                            if(plan.paid) 
+                            {
+                                let joined = document.createElement('p');
+                                joined.textContent = 'Joined';
+                                joined.classList.add('joined');
+                                buttonGroup.appendChild(joined);
+                            }
+                            else
+                            {
+                                const joinUsButton = document.createElement('button');
+                                joinUsButton.classList.add('sBtnW');
+                                joinUsButton.textContent = 'Join now';
+                                joinUsButton.addEventListener('click', () => {
+                                    let  paymentID;
+                                    // paypal.Buttons({
+
+                                    //     createOrder: function(data, actions) {
+                                    //         const planID = { id: plan.id };
+                                    //         fetch('https://securitycubes.com/api/CreatePayment/', {
+                                    //             method: 'POST',
+                                    //             headers: { Authorization: "Token " + localStorage.getItem('token'),
+                                    //                 "Content-Type": "application/json" },
+                                    //             body: JSON.stringify(planID)
+                                    //         }).then((res) => {
+                                    //             res.json().then((json) => { 
+                                    //                 console.log(json);
+                                    //                 paymentID = { order_id: json.id };
+                                    //              })
+                                    //         })
+                                    //         return actions.order.create({
+                                    //             purchase_units: [{
+                                    //                 amount: {
+                                    //                     value: plan.Pricing
+                                    //                 }
+                                    //             }]
+                                    //         })
+                                    //     },
+
+                                    //     onApprove: function(data, actions) {
+                                    //         return actions.order.capture().then(function(details) {
+                                    //             console.log(details);
+                                    //             fetch('https://securitycubes.com/api/CapturePayment/', {
+                                    //                 method: 'POST',
+                                    //                 headers: { "Content-Type": "application/json",
+                                    //                             Authorization: "Token " + localStorage.getItem('token') },
+                                    //                 body: JSON.stringify(paymentID)
+                                    //             }).then((res) => {
+                                    //                 res.json().then((json) => { 
+                                    //                     console.log(json);
+                                    //                 })
+                                    //             })
+                                    //         })
+                                    //     }
+                                    // }).render(buttonGroup);
+                                    
+                                    joinUsButton.remove();
+                                    paypal.Buttons({
+                                        createOrder: function(data, actions) {
+                                            const planID = { id: plan.id };
+                                            return fetch("https://securitycubes.com/api/CreatePayment/", {
+                                            method: "POST",
+                                            headers: {
+                                                Authorization: "Token " + localStorage.getItem('token'),
+                                                "Content-Type": "application/json",
+                                            },
+                                            body: JSON.stringify(planID),
+                                            }).then((res) => {
+                                                return res.json();
+                                            }).then((json) => {
+                                                return json.id;
+                                            });
+                                        },
+
+                                        onApprove: function(data, actions) {
+                                            const paymentID = { order_id: data.orderID };
+                                            return fetch("https://securitycubes.com/api/CapturePayment/", {
+                                            method: "POST",
+                                            headers: {
+                                                Authorization: "Token " + localStorage.getItem('token'),
+                                                "Content-Type": "application/json",
+                                            },
+                                            body: JSON.stringify(paymentID),
+                                            }).then((res) => {
+                                                return res.json();
+                                            }).then((json) => {
+                                                console.log(json);
+
+                                                while(buttonGroup.firstChild) 
+                                                    buttonGroup.removeChild(buttonGroup.firstChild);
+
+                                                let joined = document.createElement('p');
+                                                joined.textContent = 'Joined';
+                                                joined.classList.add('joined');
+                                                buttonGroup.appendChild(joined);
+                                                userData().then(json => console.log(json))
+                                            })
+                                        }
+                                        }).render(buttonGroup);
+                                })
+                                buttonGroup.appendChild(joinUsButton);
+                            }
+                            priceList.appendChild(planItem);
+                        }
+                    })
+                })
+            } catch(err) {
+                return;
+            }
+        }
+        if(localStorage.getItem('token')) sendContactUs();
+    </script>
+</body>
+</html>

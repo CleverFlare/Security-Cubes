@@ -1,0 +1,39 @@
+.gamesSide, .trainingSide {
+    animation: popUp .5s cubic-bezier(0.69, 0.04, 0.07, 0.99);
+}
+nav {
+    animation: popUp .5s cubic-bezier(0.69, 0.04, 0.07, 0.99);
+}
+.gamesSide , .trainingSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gamesSide img, .trainingSide img {
+    width: 200px;
+}
+
+.sections {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@keyframes popUp {
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 864px) {
+    .sections {
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+    }
+}

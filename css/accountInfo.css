@@ -1,0 +1,44 @@
+#accountDetails {
+    padding-top: 100px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+}
+
+.accountInfo, .paymentInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 700px;
+    gap: 20px;
+}
+
+.accountInfo .accountRow, .paymentInfo .paymentRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.accountInfo .accountRow div, .paymentInfo .paymentRow div {
+    flex-grow: 2;
+}
+
+.accountInfo .accountRow div input, .paymentInfo .paymentRow div input {
+    width: 100%;
+}
+
+.accountInfo div, .paymentInfo div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media screen and (max-width: 864px) {
+    /* .accountInfo .accountRow, .paymentInfo .paymentRow {
+        flex-direction: column;
+    } */
+    .accountInfo, .paymentInfo {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}

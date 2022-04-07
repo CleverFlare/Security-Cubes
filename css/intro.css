@@ -1,0 +1,67 @@
+/* section {
+    visibility: hidden;
+    animation: 1s ease 1s 1 normal forwards strictAppear;
+} */
+nav {
+    opacity: 0;
+    animation: 1s ease .5s 1 normal forwards appear;
+}
+header, section {
+    opacity: 0;
+    animation: 1s ease .7s 1 normal forwards appear;
+}
+p, h1, button {
+    opacity: 0;
+    animation: 1s ease 1s 1 normal forwards movementLeft;
+}
+aside {
+    opacity: 0;
+    animation: 1s ease 1.3s 1 normal forwards movementUp;
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes scaleUp {
+    from{
+        opacity: 0;
+        transform: scale(.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes movementUp {
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes movementLeft {
+    from{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* @keyframes strictAppear {
+    from{
+        visibility: hidden;
+    }
+    to{
+        visibility: visible;
+    }
+} */

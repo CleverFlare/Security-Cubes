@@ -1,0 +1,124 @@
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 72px;
+    background-color: transparent;
+    padding: 0 100px;
+    box-sizing: border-box;
+    z-index: 20;
+    box-shadow: 0 0 0 var(--richBlack);
+}
+nav a.logo {
+    width: max-content;
+    height: max-content;
+}
+nav a img {
+    width: 183.8px;
+    height: 48px;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    transition: .5s;
+}
+nav ul li.burger, nav ul li.close{
+    display: none;
+}
+nav ul li a {
+    cursor: pointer;
+}
+nav ul li a:hover {
+    opacity: .5;
+}
+nav .navLeftIcons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+nav .navLeftIcons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+nav .icon svg {
+    /* border-radius: 50%; */
+    overflow: hidden;
+    cursor: pointer;
+}
+nav .navLeftIcons .logout svg {
+    width: 24px;
+    height: 24px;
+}
+nav .menu {
+    display: none;
+    z-index: 1000;
+}
+nav .menu #close-24px {
+    display: none;
+}
+aside {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+aside p {
+    writing-mode: vertical-rl;
+}
+
+@media screen and (max-width: 864px) {
+    nav {
+        padding: 0 50px;
+    }
+    nav .menu {
+        display: block;
+    }
+    nav .navLeftIcons {
+        display: none;
+    }
+    nav ul {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background-color: var(--white);
+        gap: 0;
+    }
+    nav ul li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    nav ul li a {
+        color: var(--richBlack);
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        font-size: var(--sHeader);
+        font-weight: bold;
+    }
+    nav ul li.burger, nav ul li.close{
+        display: flex;
+    }
+    aside {
+        display: none;
+    }
+}

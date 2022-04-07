@@ -1,0 +1,197 @@
+/* variables */
+:root {
+    scroll-behavior: smooth;
+    /* Primary Colors */
+    --richBlack: #090909; /* Rich Black */
+    --onyx: #3D3D3D; /* Onyx */
+
+    /* Accent Colors */
+    --trypanBlue: #0000B5; /* Trypan blue */
+    --auburn: #9E2A2B; /* Auburn */
+    --newYorkPink: #E18E90; /* New York pink */
+
+    /* Denotive Colors */
+    --darkPastelGreen: #20BF55; /* Dark pastel green */
+    --amaranthRed: #D72638; /* Amaranth red */
+    
+    /* Neutral Colors */
+    --greyX: #BABABA; /* Grey X */
+    --gainsoboro: #E0E0E0; /* Gainsboro */
+    --white: #FFFFFF; /* White */
+
+    /* Typography */
+    --pHeader: 52px; /* Pages header */
+    --sHeader: 36px; /* Section header */
+    --pContent: 26px; /* Pages content */
+    --sContent: 23px; /* Section content */
+    --bfl: 20px; /* Buttons % Forms Labels */
+    --cp: 18px; /* Caption % Pagination */
+    --labels: 16px; /* Labels */
+}
+
+/* Font Family */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pages header class */
+.pHeader {
+    font-size: var(--pHeader);
+}
+
+/* Section header class */
+.sHeader {
+    font-size: var(--sHeader);
+}
+
+/* Pages content class */
+.pContent {
+    font-size: var(--pContent);
+}
+
+/* Section content class */
+.sContent {
+    font-size: var(--sContent);
+}
+
+/* Buttons & Forms Labels class */
+.bfl {
+    font-size: var(--bfl);
+}
+
+/* Caption & Pagination class */
+.cp {
+    font-size: var(--cp);
+}
+
+/* Labels class */
+.labels {
+    font-size: var(--labels);
+}
+
+/* Primary button */
+.pBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 194px;
+    height: 56px;
+    border-radius: 3px;
+    background-color: #0000b5;
+    color: #fff;
+    font-size: var(--bfl);
+    border: none;
+    cursor: pointer;
+}
+.pBtn:hover {
+    background-color: #9999ff;
+    color: #0000b5;
+}
+
+/* Disabled  */
+.pBtnDis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 194px;
+    height: 56px;
+    border-radius: 3px;
+    background-color: #424242;
+    color: #fff;
+    font-size: var(--bfl);
+    border: none;
+    cursor: pointer;
+}
+
+/* Secondary button (Colored) */
+.sBtnC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 194px;
+    height: 56px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: #0000b5 solid 2px;
+    color: #0000b5;
+    font-size: var(--bfl);
+    cursor: pointer;
+}
+.sBtnC:hover {
+    border: #9999ff solid 2px;
+    color: #9999ff;
+}
+
+/* Secondary button */
+.sBtnW {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 178px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: transparent;
+    border: #fff solid 2px;
+    color: #fff;
+    font-size: var(--bfl);
+    cursor: pointer;
+}
+.sBtnW:hover {
+    width: 178px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #fff;
+    border: #fff solid 2px;
+    color: #9e2a2b;
+}
+
+/* ignore this one, you won't need it */
+.pBtn2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 178px;
+    height: 40px;
+    border-radius: 3px;
+    background-color: #0000b5;
+    color: #fff;
+    font-size: var(--bfl);
+    border: none;
+    cursor: pointer;
+}
+.pBtn2:hover {
+    background-color: #9999ff;
+    color: #0000b5;
+}
+
+/* content container */
+/* .container {
+    width: calc(100% - (100px * 2));
+} */
+.container {
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.icon, .icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+@media screen and (max-width: 864px) {
+    .container {
+        padding: 0 5px;
+        box-sizing: border-box;
+    }
+    .sections {
+        align-items: center;
+        text-align: center;
+    }
+}

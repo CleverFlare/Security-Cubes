@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: var(--white);
+}
+
+body {
+    background-color: var(--richBlack);
+}
+
+/* home */
+#home {
+    background-image: url('../Images/1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    gap: 40px;
+}
+/* end of home */
+
+/* about */
+#about {
+    gap: 60px;
+}
+#about div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+/* end of about */
+
+/* CTF */
+#CTF {
+    background-image: url('../Images/3.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 40px;
+}
+/* end of CTF */
+
+/* contact */
+#contact {
+    background-image: url('../Images/4.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 40px;
+}
+#contact form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+#contact form div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+#contact form .user {
+    justify-content: space-between;
+    flex-direction: row;
+}
+#contact form .user div{
+    flex-grow: 1;
+}
+#contact form .user div input {
+    width: 100%;
+}
+/* end of contact */
+
+/* Pricing */
+#pricing {
+    gap: 40px;
+}
+#pricing .priceList{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+}
+#pricing .priceList .priceItem{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    background-color: var(--onyx);
+    flex-grow: 2;
+    gap: 20px;
+    border-radius: 5px;
+}
+#pricing .priceList .priceItem div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#pricing .priceList .priceItem hr{
+    width: 178px;
+}
+#pricing .priceList .priceItem ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+#pricing .priceList .priceItem ul li{
+    text-align: center;
+}
+/* end of Pricing */
+
+/* blog */
+#blog {
+    background-image: url('../Images/6.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    gap: 40px;
+}
+/* end of blog */
+
+p.joined {
+    color: rgb(139, 139, 139);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 864px) {  
+    /* contact */
+    #contact {
+        gap: 20px;
+    }
+    #contact form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    #contact form div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    #contact form .user {
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    #contact form .user div{
+        flex-grow: 1;
+    }
+    #contact form textarea{
+        height: 200px;
+    }
+    /* end of contact */
+
+    /* Pricing */
+    #pricing .priceList{
+        align-items: center;
+        flex-direction: column;
+        width: 300px;
+        max-width: 100%;
+    }
+    #pricing .priceList .priceItem{
+        min-width: 100%;
+        max-width: 100%;
+        padding: 40px 20px;
+        box-sizing: border-box;
+    }
+    /* end of Pricing */
+}

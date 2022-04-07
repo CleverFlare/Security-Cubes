@@ -1,0 +1,145 @@
+* {
+    color: unset;
+}
+nav {
+    color: white;
+}
+#codeEditor {
+    padding-top: 100px;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+#codeEditor .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+}
+#codeEditor .tab svg {
+    width: 10px;
+    height: 10px;
+}
+.codeSec {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 2);
+    color: var(--white);
+}
+.codeSec .codeSecHeader {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: small;
+}
+.codeSec .codeSecHeader .title {
+    padding-left: 20px;
+}
+.codeSec .codeSecProgBody {
+    width: 100%;
+    flex-grow: 2;
+    padding: 15px 20px;
+    box-sizing: border-box;
+}
+.docLearn .docLearnHeader {
+    background-color: #3d3d3d;
+}
+.docLearn .docLearnBody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--white);
+    color: #8b8b8b;
+}
+
+.ranProg .ranProgHeader {
+    justify-content: space-between;
+    background-color: #090909;
+}
+.ranProg .ranProgHeader .tab {
+    background-color: transparent;
+}
+.ranProg .ranProgBody {
+    background-color: #090909;
+    position: relative;
+}
+.ranProg .ranProgBody p {
+    font-family: monospace;
+}
+.ranProg .ranProgBody .run {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 85px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #9e2a2b;
+    border: none;
+}
+.ranProg .ranProgBody .run:hover {
+    background-color: #c33335;
+}
+.ranProg .ranProgBody .run:active {
+    background-color: #6a1d1e;
+}
+
+.terminal .terminalHeader {
+    justify-content: space-between;
+}
+.terminal .terminalHeader .terminalHeaderLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.terminal .terminalHeader .tab {
+    background-color: #3d3d3d;
+}
+.terminal .terminalBody {
+    background-color: #3d3d3d;
+}
+.terminal .terminalBody .result {
+    color: #a2ffa2;
+    font-family: monospace;
+}
+.terminal .terminalBody .terminalLine {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: monospace;
+}
+.terminal .terminalBody .terminalLine .inputLike {
+    padding: 15px;
+    font-family: monospace;
+    font-size: 1rem;
+}
+.terminal .terminalBody .terminalLine .prefix {
+    color: #d29b34;
+}
+.terminal .terminalBody .terminalLine input {
+    width: 100%;
+    background-color: transparent;
+    font-size: 1rem;
+    color: #f0bf81;
+}
+
+@media screen and (max-width: 864px) {
+    #codeEditor {
+        flex-direction: column;
+    }
+    .codeSec {
+        width: 100%;
+    }
+    .codeSec .codeSecProgBody {
+        height: 500px;
+        overflow: auto;
+    }
+}

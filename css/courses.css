@@ -1,0 +1,249 @@
+* {
+    color: unset;
+}
+nav {
+    color: var(--white);
+}
+#course {
+    display: grid;
+    justify-content: start;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto 1fr;
+    padding-top: 100px;
+    color: var(--white);
+}
+
+svg #filled {
+    display: none;
+}
+svg.active #filled {
+    display: block;
+}
+svg.active #unfilled {
+    display: none;
+}
+
+.headings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: max-content;
+    padding-right: 20px;
+}
+.headings .courseApps {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+.headings .courseApps .courseAppsLeft {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.headings .courseApps .courseAppsLeft .startCourseButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    background-color: #9e2a2b;
+    height: max-content;
+    padding: 10px 15px;
+    font-size: .9rem;
+    border-radius: 10px;
+}
+.headings .courseApps .courseAppsLeft .startCourseButton svg{
+    width: 15px;
+    height: 15px;
+}
+.headings .courseApps .courseAppsLeft .bookmark {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    font-size: .9rem;
+    color: #e18e90;
+}
+.headings .courseApps .courseAppsLeft .bookmark svg {
+    width: 18px;
+    height: 18px;
+}
+.headings .courseApps .courseAppsLeft .bookmark svg {
+    width: 18px;
+    height: 18px;
+}
+.headings .courseApps .courseAppsRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.headings .courseApps .courseAppsRight .progress {
+    width: 160px;
+    height: 10px;
+    background-color: #3d3d3d;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.headings .courseApps .courseAppsRight .progress::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-image: repeating-linear-gradient(110deg, #6bd8fa, #6bd8fa 5px, #88e3ff 5px, #88e3ff 10px);
+}
+.headings .courseApps .courseAppsRight p {
+    font-size: small;
+    color: #bcbcbc;
+}
+
+.courseDetails {
+    grid-row: 1 / span 2;
+    grid-column: 2 / 2;
+    display: flex;
+    flex-direction: column;
+    background-color: #3d3d3d;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 30px;
+}
+.courseDetails .descrip {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.courseDetails .descrip p{
+    font-size: .9rem;
+    color: #afafaf;
+}
+
+
+.courseDetails .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.courseDetails .info .picOfInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.courseDetails .info p {
+    font-size: .8rem;
+}
+.courseDetails .info .infoValue {
+    color: #afafaf;
+}
+.courseDetails .info hr {
+    border: none;
+    background-color: #5a5a5a;
+    height: 2px;
+}
+.courseDetails .info .rate .starsGroup {
+    display: flex;
+    cursor: pointer;
+}
+
+.courseDetails .sharing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.coursesList {
+    display: flex;
+    flex-direction: column;
+    max-height: 583.89px;
+    grid-column: 1 / 1;
+}
+.coursesTable {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    overflow: auto;
+    gap: 1px;
+    max-height: 537.31px;
+}
+.coursesList .courseHeading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    height: max-content;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    background-color: #3d3d3d;
+}
+.coursesList .courseHeading .contentTable {
+    font-weight: bold;
+    font-size: .9rem;
+}
+.coursesList .courseHeading .courseDescriptionMenu {
+    font-size: .8rem;
+    color: #afafaf;
+}
+.coursesList .coursesTable .lession {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    background-color: #e2e2e2;
+    color: #646464;
+    font-size: .8rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+.coursesList .coursesTable .lession .lessionLeft {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.coursesList .coursesTable .lession svg {
+    width: 12px;
+    height: 12px;
+}
+.coursesList .coursesTable .lession .lessionRight {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: .9rem;
+}
+.coursesList .coursesTable .lession .lessionRight span {
+    cursor: pointer;
+}
+.coursesList .coursesTable .lession .lessionRight .whatched {
+    display: none;
+    color: #00cf00;
+    font-weight: bold;
+}
+.coursesList .coursesTable .lession.done .lessionRight .whatched {
+    display: block;
+}
+
+@media screen and (max-width: 864px) {
+    #course {
+        display: flex;
+        flex-direction: column;
+    }
+    .headings .courseApps{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .headings .courseApps .courseAppsLeft, .headings .courseApps .courseAppsRight{
+        justify-content: center;
+    }
+    .coursesList {
+        width: 100%;
+    }
+    .courseDetails {
+        width: 100%;
+    }
+}
