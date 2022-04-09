@@ -60,6 +60,7 @@
                 headers: { Authorization: "Token " + localStorage.getItem('token') }
             }).then(res => {
                 res.json().then(games => {
+                    console.log(games);
                     for(const game of games) {
                         const gameItem = document.createElement('a');
                         gameItem.setAttribute('href', '../game page/game.html');
@@ -73,6 +74,13 @@
                         gamePicture.setAttribute('src', game.GamePhoto);
                         gamePicture.setAttribute('alt', 'Descriptive image');
                         gameItem.appendChild(gamePicture);
+
+                        gameItem.addEventListener('click', e => {
+                            localStorage.setItem('GameCodeUrl', game.GameCodeUrl);
+                            localStorage.setItem('GameDataUrl', game.GameDataUrl);
+                            localStorage.setItem('GameFrameworkUrl', game.GameFrameworkUrl);
+                            localStorage.setItem('GameLoderUrl', game.GameLoderUrl);
+                        })
 
                         gamesList.appendChild(gameItem);
                     }

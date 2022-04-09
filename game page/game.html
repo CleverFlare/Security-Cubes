@@ -24,11 +24,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/fg.loader.js";
+      var loaderUrl = localStorage.getItem('GameLoderUrl');
       var config = {
-        dataUrl: buildUrl + "/fg.data.gz",
-        frameworkUrl: buildUrl + "/fg.framework.js.gz",
-        codeUrl: buildUrl + "/fg.wasm.gz",
+        dataUrl: localStorage.getItem('GameDataUrl'),
+        frameworkUrl: localStorage.getItem('GameFrameworkUrl'),
+        codeUrl: localStorage.getItem('GameCodeUrl'),
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Tito",
