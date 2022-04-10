@@ -151,9 +151,9 @@
         <p class="sContent">Here you can compete with other hacker in online MMORPG game , you can access it though our hacker portal</p>
         <div class="priceList">
             <div class="priceItem">
-                <p class="cp">Plan 1</p>
+                <p class="cp">paln A</p>
                 <div>
-                    <h1 class="pHeader">$10</h1>
+                    <h1 class="pHeader">$0.2</h1>
                     <p>Per month</p>
                 </div>
                 <hr>
@@ -161,16 +161,15 @@
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
-                    <li class="cp">Feature</li>
                 </ul>
                 <div class="priceItemButtons">
-                    <button class="sBtnW">Join now</button>
+                    <a href="pages/account.html" class="sBtnW">Join now</a>
                 </div>
             </div>
             <div class="priceItem">
-                <p class="cp">Plan 2</p>
+                <p class="cp">only serve site</p>
                 <div>
-                    <h1 class="pHeader">$50</h1>
+                    <h1 class="pHeader">$20</h1>
                     <p>Per month</p>
                 </div>
                 <hr>
@@ -178,14 +177,13 @@
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
-                    <li class="cp">Feature</li>
                 </ul>
                 <div class="priceItemButtons">
-                    <button class="sBtnW">Join now</button>
+                    <a href="pages/account.html" class="sBtnW">Join now</a>
                 </div>
             </div>
             <div class="priceItem">
-                <p class="cp">Plan 3</p>
+                <p class="cp">Prenium</p>
                 <div>
                     <h1 class="pHeader">$60</h1>
                     <p>Per month</p>
@@ -195,10 +193,9 @@
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
                     <li class="cp">Feature</li>
-                    <li class="cp">Feature</li>
                 </ul>
                 <div class="priceItemButtons">
-                    <button class="sBtnW">Join now</button>
+                    <a href="pages/account.html" class="sBtnW">Join now</a>
                 </div>
             </div>
         </div>
@@ -245,10 +242,12 @@
             }
         })
 
-        async function sendContactUs() {
+        async function getPlans() {
             try{
                 await fetch('https://securitycubes.com/api/plans/', {
-                    headers: { Authorization: "Token " + localStorage.getItem('token') }
+                    headers: { 
+                        // Authorization: "Token " + localStorage.getItem('token') 
+                    }
                 }).then(res => {
                     while(priceList.firstChild) priceList.removeChild(priceList.firstChild);
                     res.json().then(json => {
@@ -296,8 +295,7 @@
                             buttonGroup.classList.add('priceItemButtons');
                             planItem.appendChild(buttonGroup);
 
-                            if(plan.paid) 
-                            {
+                            if(plan.paid) {
                                 let joined = document.createElement('p');
                                 joined.textContent = 'Joined';
                                 joined.classList.add('joined');
@@ -305,52 +303,13 @@
                             }
                             else
                             {
-                                const joinUsButton = document.createElement('button');
-                                joinUsButton.classList.add('sBtnW');
-                                joinUsButton.textContent = 'Join now';
-                                joinUsButton.addEventListener('click', () => {
+                                let joinUsButton;
+                                if(localStorage.getItem('token') !== null) {
+                                    joinUsButton = document.createElement('button');
+                                    joinUsButton.classList.add('sBtnW');
+                                    joinUsButton.textContent = 'Join now';
+                                    joinUsButton.addEventListener('click', () => {
                                     let  paymentID;
-                                    // paypal.Buttons({
-
-                                    //     createOrder: function(data, actions) {
-                                    //         const planID = { id: plan.id };
-                                    //         fetch('https://securitycubes.com/api/CreatePayment/', {
-                                    //             method: 'POST',
-                                    //             headers: { Authorization: "Token " + localStorage.getItem('token'),
-                                    //                 "Content-Type": "application/json" },
-                                    //             body: JSON.stringify(planID)
-                                    //         }).then((res) => {
-                                    //             res.json().then((json) => { 
-                                    //                 console.log(json);
-                                    //                 paymentID = { order_id: json.id };
-                                    //              })
-                                    //         })
-                                    //         return actions.order.create({
-                                    //             purchase_units: [{
-                                    //                 amount: {
-                                    //                     value: plan.Pricing
-                                    //                 }
-                                    //             }]
-                                    //         })
-                                    //     },
-
-                                    //     onApprove: function(data, actions) {
-                                    //         return actions.order.capture().then(function(details) {
-                                    //             console.log(details);
-                                    //             fetch('https://securitycubes.com/api/CapturePayment/', {
-                                    //                 method: 'POST',
-                                    //                 headers: { "Content-Type": "application/json",
-                                    //                             Authorization: "Token " + localStorage.getItem('token') },
-                                    //                 body: JSON.stringify(paymentID)
-                                    //             }).then((res) => {
-                                    //                 res.json().then((json) => { 
-                                    //                     console.log(json);
-                                    //                 })
-                                    //             })
-                                    //         })
-                                    //     }
-                                    // }).render(buttonGroup);
-                                    
                                     joinUsButton.remove();
                                     paypal.Buttons({
                                         createOrder: function(data, actions) {
@@ -394,7 +353,13 @@
                                             })
                                         }
                                         }).render(buttonGroup);
-                                })
+                                    })
+                                } else {
+                                    joinUsButton = document.createElement('a');
+                                    joinUsButton.classList.add('sBtnW');
+                                    joinUsButton.textContent = 'Join now';
+                                    joinUsButton.href = 'pages/account.html';
+                                }
                                 buttonGroup.appendChild(joinUsButton);
                             }
                             priceList.appendChild(planItem);
@@ -405,7 +370,7 @@
                 return;
             }
         }
-        if(localStorage.getItem('token')) sendContactUs();
+        getPlans();
     </script>
 </body>
 </html>

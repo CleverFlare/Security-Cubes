@@ -86,12 +86,13 @@ svg.active #unfilled {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    /* --proress: 50%; */
 }
 .headings .courseApps .courseAppsRight .progress::before {
     content: '';
     position: absolute;
     left: 0;
-    width: 50%;
+    width: var(--progress);
     height: 100%;
     background-image: repeating-linear-gradient(110deg, #6bd8fa, #6bd8fa 5px, #88e3ff 5px, #88e3ff 10px);
 }
@@ -164,7 +165,7 @@ svg.active #unfilled {
     flex-direction: column;
     background-color: white;
     overflow: auto;
-    gap: 1px;
+    gap: 2px;
     max-height: 537.31px;
 }
 .coursesList .courseHeading {

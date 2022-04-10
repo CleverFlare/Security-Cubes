@@ -53,25 +53,6 @@ async function fetchingCourses() {
                 whatched.classList.add('whatched');
                 whatched.innerHTML = '&#10003;';
                 lessionRight.appendChild(whatched);
-                
-                const bookmark = document.createElement('span');
-                bookmark.classList.add('bookmark');
-                bookmark.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 14 18">
-                        <path id="unfilled" data-name="Path 1456" d="M17,3H7A2.006,2.006,0,0,0,5,5V21l7-3,7,3V5A2.006,2.006,0,0,0,17,3Zm0,15-5-2.18L7,18V6A1,1,0,0,1,8,5h8a1,1,0,0,1,1,1Z" transform="translate(-5 -3)" fill="currentColor"/>
-                        <path id="filled" data-name="Path 1456" d="M17,3H7A2.006,2.006,0,0,0,5,5V21l7-3,7,3V5A2.006,2.006,0,0,0,17,3Z" transform="translate(-5 -3)" fill="currentColor"/>
-                    </svg>`;
-                lessionRight.appendChild(bookmark);
-
-                const duration = document.createElement('span');
-                duration.innerText = '1m 49s';
-                lessionRight.appendChild(duration);
-
-                const lessionDetails = document.createElement('span');
-                lessionDetails.classList.add('lessionDetails');
-                lessionDetails.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 7 4.125">
-                        <path id="keyboard_arrow_down-24px" d="M7.48,9.181l2.43,2.43,2.43-2.43a.625.625,0,1,1,.883.883l-2.875,2.875a.624.624,0,0,1-.883,0L6.591,10.064a.624.624,0,0,1,0-.883A.637.637,0,0,1,7.48,9.181Z" transform="translate(-6.407 -8.997)" fill="currentColor"/>
-                    </svg>`;
-                lessionRight.appendChild(lessionDetails);
 
                 courseName.addEventListener('click', e => {
                     localStorage.setItem('courseID', lession.getAttribute('data-ID'));
@@ -79,15 +60,13 @@ async function fetchingCourses() {
 
                 coursesTable.append(lession);
             }
-
-            const bookmarks = document.querySelectorAll('.bookmark svg');
-
-            bookmarks.forEach(bookmark => {
-                bookmark.parentElement.addEventListener('click', e => {
-                    e.preventDefault()
-                    bookmark.classList.toggle('active');
-                })
-            })
+        }).then(() => {
+            const totalCoursesElements = document.querySelectorAll('.coursesTable div.lession');
+            const doneCoursesElements = document.querySelectorAll('.coursesTable div.done');
+            const progressBar = document.querySelector('.progress');
+            const totalCourses = totalCoursesElements.length;
+            const doneCourses = doneCoursesElements.length;
+            progressBar.style.setProperty('--progress', `${(doneCourses/totalCourses) * 100}%`);
             removeLoader();
         });
     })
