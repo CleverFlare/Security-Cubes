@@ -224,13 +224,14 @@
                 FullName: contactUsUsername.value,
                 message: contactUsMessage.value
             }
-            await fetch('https://securitycubes.com/api/plans/', {
+            await fetch('https://securitycubes.com/api/contactUs/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data)
             }).then(res => {
                 res.json().then(json => {
                     console.log(json);
+                    location.reload();
                 })
             })
         }

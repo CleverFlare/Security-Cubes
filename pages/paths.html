@@ -98,38 +98,23 @@
 
                         const courseDisplayTitle = document.createElement('h6');
                         courseDisplayTitle.classList.add('disTitle');
-                        // courseDisplayTitle.textContent = course.TrackName;
-                        // courseDisplay.appendChild(courseDisplayTitle);
 
                         const courseLessions = document.createElement('p');
                         courseLessions.classList.add('disCourses');
-                        // courseLessions.textContent = course.num + ' Lessions';
-                        // courseDisplay.appendChild(courseLessions);
-
-                        const courseDuration = document.createElement('div');
-                        courseDuration.classList.add('disTime')
-                        // courseDuration.innerHTML = '<p class="disTimeNum">3 hours</p>';
-                        // courseDisplay.appendChild(courseDuration);
 
                         const courseInfo = document.createElement('div');
                         courseInfo.classList.add('recoData')
                         courseCard.appendChild(courseInfo);
 
                         const courseInfoName = document.createElement('h4');
-                        // courseInfoName.textContent = course.Description;
-                        // courseInfo.appendChild(courseInfoName);
 
                         const courseInfoLessions = document.createElement('p');
-                        // courseInfoLessions.textContent = course.num + ' Lessions';
-                        // courseInfo.appendChild(courseInfoLessions);
 
                         if(!course.TrackName.includes('Popular')) {
                             courseDisplayTitle.textContent = course.TrackName;
                             courseDisplay.appendChild(courseDisplayTitle);
                             courseLessions.textContent = course.num + ' Courses';
                             courseDisplay.appendChild(courseLessions);
-                            courseDuration.innerHTML = '<p class="disTimeNum">3 hours</p>';
-                            courseDisplay.appendChild(courseDuration);
                             courseInfoName.textContent = course.Description;
                             courseInfo.appendChild(courseInfoName);
                             courseInfoLessions.textContent = course.num + ' Lessions';
@@ -140,8 +125,6 @@
                             courseDisplay.appendChild(courseDisplayTitle);
                             courseLessions.textContent = course.num + ' Lessions';
                             courseDisplay.appendChild(courseLessions);
-                            courseDuration.innerHTML = '<p class="disTimeNum">3 hours</p>';
-                            courseDisplay.appendChild(courseDuration);
                             courseInfoName.textContent = course.TrackName;
                             courseInfo.appendChild(courseInfoName);
                             courseInfoLessions.textContent = course.Description;

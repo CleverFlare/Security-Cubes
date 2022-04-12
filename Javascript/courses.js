@@ -2,6 +2,12 @@ const coursesTable = document.querySelector('.coursesTable');
 const courseDescription = document.querySelector('.courseDetails .descrip p');
 const courseDuration = document.querySelector('.courseDetails .duration .infoValue');
 const courseDifficulty = document.querySelector('.courseDetails .info .dific .infoValue');
+const startCourseButton = document.querySelector('.startCourseButton');
+
+if(!localStorage.getItem('courseID')) {
+    startCourseButton.removeAttribute('href');
+    startCourseButton.classList.add('disabled');
+}
 
 async function fetchingCourses() {
     await fetch('https://securitycubes.com/api/challangeDetail/?Challangeid=' + localStorage.getItem('pathID'), {
@@ -21,12 +27,11 @@ async function fetchingCourses() {
                 courseDifficulty.innerText = 'Hard';
             }
             const courses = json[0].examples;
-            for(let course of courses) { 
-
+            for(let course of courses) {
                 const lession = document.createElement('div');
                 lession.setAttribute('data-ID', course.id)
                 lession.classList.add('lession');
-                if(course.isSolved === true) lession.classList.add('done');
+                if(course.IsSolved) lession.classList.add('done');
 
                 const lessionLeft = document.createElement('div');
                 lessionLeft.classList.add('lessionLeft');
@@ -64,8 +69,10 @@ async function fetchingCourses() {
             const totalCoursesElements = document.querySelectorAll('.coursesTable div.lession');
             const doneCoursesElements = document.querySelectorAll('.coursesTable div.done');
             const progressBar = document.querySelector('.progress');
+            const percentage = document.querySelector('.percentage');
             const totalCourses = totalCoursesElements.length;
             const doneCourses = doneCoursesElements.length;
+            percentage.innerText = `${Math.round((doneCourses/totalCourses) * 100)}%`;
             progressBar.style.setProperty('--progress', `${(doneCourses/totalCourses) * 100}%`);
             removeLoader();
         });

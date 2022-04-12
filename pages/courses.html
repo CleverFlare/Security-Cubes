@@ -12,6 +12,14 @@
     <script src="../Javascript/courses.js" defer></script>
     <script src="../Javascript/navbar.js" defer></script>
     <script src="../Javascript/loading.js" defer></script>
+    <style>
+        .startCourseButton {
+            cursor: pointer;
+        }
+        .startCourseButton.disabled {
+            background-color: #5c5c5c !important;
+        }
+    </style>
 </head>
 <body>
     <!-- navigator -->
@@ -62,7 +70,7 @@
                 <span class="courseAppsRight">
                     <p>Progress</p>
                     <div class="progress"></div>
-                    <p>50%</p>
+                    <p class="percentage">50%</p>
                 </span>
             </div>
         </header>
