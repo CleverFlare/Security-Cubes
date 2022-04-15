@@ -48,8 +48,8 @@
         <div class="recommended">
             <div class="caption">
                 <a href="" class=".bf1"> &lt; All path </a>
-                <h1 class="sContent">Cloud security Knowledge</h1>
-                <h5 class="Lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                <h1 id="pathsHeading" class="sContent">Cloud security Knowledge</h1>
+                <h5 id="pathsDescription" class="Lorem">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                 standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</h5>
                 <div class="Courses"> Courses</div>
             </div>
@@ -61,13 +61,16 @@
 
     <script>
         const coursesList = document.querySelector('#coursesList');
-        console.log(coursesList);
+        const heading = document.querySelector('#pathsHeading');
+        const description = document.querySelector('#pathsDescription');
         fetch('https://securitycubes.com/api/challanges/?trackid=' + localStorage.getItem('trackId'), {
             headers: {
                 Authorization: "Token " + localStorage.getItem('token')
             }
         }).then(res => {
             res.json().then(json => {
+                heading.textContent = localStorage.getItem('coursesHeading');
+                description.textContent = localStorage.getItem('coursesDescription');
                 for(const item of json) {
                     const recoItem = document.createElement('a');
                     recoItem.classList.add('recoItem');

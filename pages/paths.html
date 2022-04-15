@@ -80,8 +80,9 @@
                 }
             }).then(res => {
                 res.json().then(json => {
+                    localStorage.setItem('coursesHeading', json[0].InternalBigText);
+                    localStorage.setItem('coursesDescription', json[0].InternalDescription);
                     for(course of json) {   
-
                         const courseCard = document.createElement('a');
                         courseCard.setAttribute('data-ID', course.id);
                         courseCard.href = 'path.html';
