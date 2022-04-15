@@ -68,7 +68,7 @@
         </div>
     </section>
     <script>
-        const id = localStorage.getItem('challengeId');
+        const id = localStorage.getItem('courseID');
         const token = localStorage.getItem('token');
         const description = document.querySelector('#codeEditor .docLearnBody p');
         const terminalLine = document.querySelector('.terminalBody .terminalLine input');
@@ -126,7 +126,6 @@
             ).then(res => {
                 res.json().then(json => {
                     description.innerText = json.SolutionDescription;
-                    console.log(json);
                 })
                 removeLoader()
             })
